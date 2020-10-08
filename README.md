@@ -9,6 +9,8 @@
 [![forthebadge](https://forthebadge.com/images/badges/powered-by-overtime.svg)](#)
 [![forthebadge](https://forthebadge.com/images/badges/made-with-c-sharp.svg)](#)
 
+[![forthebadge](https://img.shields.io/badge/-DOCUMENTATION-green?style=for-the-badge)](https://bythope.github.io/bytech)
+
 ---
 
 Bytech is an open source game development framework built on top of MonoGame. The main goal of this project is to provide developer friendly environment for fast prototyping cross-platform games, without writing platform specific code.
