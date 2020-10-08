@@ -1,23 +1,17 @@
 ﻿using Bythope.Bytech.Core;
-using Bythope.Bytech.Demo.Game.Systems;
-
+using Bythope.Bytech.Graphics;
 using EcsRx.Infrastructure.Extensions;
-using EcsRx.Systems;
-using System;
 
 namespace Bythope.Bytech.Demo {
     public class DemoApplication : BytechApplication {
 
         protected override void OnRun(Runtime runtime) {
-            runtime.EntityDatabase.GetCollection().CreateEntity();
-            var system = runtime.Container.Resolve<TestSystem>();
-            runtime.SystemExecutor.AddSystem(system);
-            var systems = runtime.SystemExecutor.Systems;
-            Console.WriteLine();
+            IGraphics graphics = runtime.Container.Resolve<IGraphics>();
+            graphics.SetRender(new Render2D());
         }
 
         protected override void OnExit() {
-            Console.WriteLine("exit");
+            
         }
     }
 }

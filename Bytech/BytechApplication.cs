@@ -3,6 +3,7 @@ using System;
 using System.Reactive.Linq;
 
 namespace Bythope.Bytech {
+
     public abstract class BytechApplication : IDisposable {
         
         private Runtime Runtime { get; }
