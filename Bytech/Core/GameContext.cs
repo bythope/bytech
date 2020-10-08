@@ -7,7 +7,7 @@ using System.Reactive;
 using System.Reactive.Linq;
 using System.Text;
 
-namespace Bythope.BytechEngine.Core {
+namespace Bythope.Bytech.Core {
     public class GameContext : Game, IGameContext {
 
         public IObservable<Unit> OnLoading => _onLoading;

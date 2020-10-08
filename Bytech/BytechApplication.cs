@@ -1,8 +1,8 @@
-﻿using Bythope.BytechEngine.Core;
+﻿using Bythope.Bytech.Core;
 using System;
 using System.Reactive.Linq;
 
-namespace Bythope.BytechEngine {
+namespace Bythope.Bytech {
     public abstract class BytechApplication : IDisposable {
         
         private Runtime Runtime { get; }

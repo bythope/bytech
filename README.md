@@ -1,7 +1,7 @@
 # Bytech
 ![GitHub](https://img.shields.io/github/license/bythope/bytech?style=for-the-badge)
 ![GitHub issues](https://img.shields.io/github/issues-raw/bythope/bytech?style=for-the-badge)
-![Nuget](https://img.shields.io/nuget/v/Bythope.BytechEngine?style=for-the-badge)
+![Nuget](https://img.shields.io/nuget/v/Bythope.Bytech?style=for-the-badge)
 
 [![forthebadge](https://forthebadge.com/images/badges/gluten-free.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/fo-real.svg)](https://forthebadge.com)

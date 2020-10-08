@@ -4,7 +4,7 @@ using EcsRx.Infrastructure.Extensions;
 using EcsRx.Scheduling;
 using System;
 
-namespace Bythope.BytechEngine.Core {
+namespace Bythope.Bytech.Core {
     class BytechModule : IDependencyModule {
 
         private readonly IGameContext _gameContext;

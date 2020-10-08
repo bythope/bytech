@@ -8,7 +8,7 @@ using System;
 using System.Reactive;
 using System.Reactive.Linq;
 
-namespace Bythope.BytechEngine.Core {
+namespace Bythope.Bytech.Core {
     public class Runtime : EcsRxApplication, IDisposable {
 
         public override IDependencyContainer Container { get; } = new NinjectDependencyContainer();

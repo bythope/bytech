@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Reactive;
 using System.Text;
 
-namespace Bythope.BytechEngine.Core {
+namespace Bythope.Bytech.Core {
     public interface IGameContext : IGameScheduler {
 
         IBytech Bytech { get; }

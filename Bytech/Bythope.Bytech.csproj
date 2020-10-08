@@ -5,6 +5,13 @@
     <Version>0.0.3</Version>
     <Authors>Bythope</Authors>
     <PackageIcon>logo.png</PackageIcon>
+    <PackageId>Bytech</PackageId>
+    <Product>Bythope.Bytech</Product>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Description>open source game development framework built on top of MonoGame. The main goal of this project is to provide developer friendly environment for fast prototyping cross-platform games, without writing platform specific code.</Description>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <RepositoryUrl>https://github.com/bythope/bytech</RepositoryUrl>
+    <PackageTags>gamedev, gameframework</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,6 +24,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
     <None Include="docs\logo.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>

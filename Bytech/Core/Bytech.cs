@@ -1,6 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 
-namespace Bythope.BytechEngine.Core {
+namespace Bythope.Bytech.Core {
     class Bytech : IBytech {
 
         public GraphicsDeviceManager GraphicsDeviceManager { get; }

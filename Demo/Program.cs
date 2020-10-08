@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Bythope.BytechEngine.Demo {
+namespace Bythope.Bytech.Demo {
     public static class Program {
         [STAThread]
         static void Main() {

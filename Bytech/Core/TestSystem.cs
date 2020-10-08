@@ -2,7 +2,7 @@
 using EcsRx.Groups.Observable;
 using EcsRx.Systems;
 
-namespace Bythope.BytechEngine.Core {
+namespace Bythope.Bytech.Core {
     internal class TestSystem : IManualSystem {
         public IGroup Group => new EmptyGroup();
 

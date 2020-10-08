@@ -1,10 +1,9 @@
-﻿using Bythope.BytechEngine.Core;
+﻿using Bythope.Bytech.Core;
 using EcsRx.Groups;
 using EcsRx.Groups.Observable;
 using EcsRx.Systems;
-using System;
 
-namespace Bythope.BytechEngine.Demo.Game.Systems {
+namespace Bythope.Bytech.Demo.Game.Systems {
     class TestSystem : IManualSystem {
         public IGroup Group => new EmptyGroup();
 
@@ -13,11 +12,11 @@ namespace Bythope.BytechEngine.Demo.Game.Systems {
         }
 
         public void StartSystem(IObservableGroup observableGroup) {
-            throw new NotImplementedException();
+
         }
 
         public void StopSystem(IObservableGroup observableGroup) {
-            throw new NotImplementedException();
+
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using EcsRx.Scheduling;
 using System;
 
-namespace Bythope.BytechEngine.Core {
+namespace Bythope.Bytech.Core {
     public interface IGameScheduler : IUpdateScheduler {
         IObservable<ElapsedTime> OnPreRender { get; }
         IObservable<ElapsedTime> OnRender { get; }

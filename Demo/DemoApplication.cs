@@ -1,11 +1,11 @@
-﻿using Bythope.BytechEngine.Core;
-using Bythope.BytechEngine.Demo.Game.Systems;
+﻿using Bythope.Bytech.Core;
+using Bythope.Bytech.Demo.Game.Systems;
 
 using EcsRx.Infrastructure.Extensions;
 using EcsRx.Systems;
 using System;
 
-namespace Bythope.BytechEngine.Demo {
+namespace Bythope.Bytech.Demo {
     public class DemoApplication : BytechApplication {
 
         protected override void OnRun(Runtime runtime) {
