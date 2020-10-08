@@ -3,13 +3,12 @@
 [![GitHub issues](https://img.shields.io/github/issues-raw/bythope/bytech?style=for-the-badge)](https://github.com/bythope/bytech/issues)
 [![Nuget](https://img.shields.io/nuget/v/Bytech?style=for-the-badge)](https://www.nuget.org/packages/Bytech/)
 [![Nuget](https://img.shields.io/nuget/dt/Bytech?style=for-the-badge)](https://www.nuget.org/packages/Bytech/)
+[![forthebadge](https://img.shields.io/badge/-DOCUMENTATION-green?style=for-the-badge)](https://bythope.github.io/bytech)
 
 [![forthebadge](https://forthebadge.com/images/badges/gluten-free.svg)](#)
 [![forthebadge](https://forthebadge.com/images/badges/fo-real.svg)](#)
 [![forthebadge](https://forthebadge.com/images/badges/powered-by-overtime.svg)](#)
 [![forthebadge](https://forthebadge.com/images/badges/made-with-c-sharp.svg)](#)
-
-[![forthebadge](https://img.shields.io/badge/-DOCUMENTATION-green?style=for-the-badge)](https://bythope.github.io/bytech)
 
 ---
 
