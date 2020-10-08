@@ -5,7 +5,7 @@
 [![Nuget](https://img.shields.io/nuget/v/Bytech?style=for-the-badge)](https://www.nuget.org/packages/Bytech/)
 [![Nuget](https://img.shields.io/nuget/dt/Bytech?style=for-the-badge)](https://www.nuget.org/packages/Bytech/)
 
-Welcome to the documentation for `Bytech` game framework. Here you will find material to learn about game development using Bytech and #C in general.
+Welcome to the documentation for `Bytech` game framework. Here you will find material to learn about game development using Bytech and C# in general.
 
 To the left is the sidebar where you can quickly jump to the information that is of interest to you.
 
