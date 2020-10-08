@@ -9,13 +9,10 @@
 [![forthebadge](https://forthebadge.com/images/badges/powered-by-overtime.svg)](#)
 [![forthebadge](https://forthebadge.com/images/badges/made-with-c-sharp.svg)](#)
 
-<img src="https://user-images.githubusercontent.com/10467454/95395271-8752d480-08fe-11eb-871d-8a3faccde207.png" align="right"
-     alt="Size Limit logo by Anton Lovchikov" width="100">
-
-<p style="height:100px">Bytech is an open source game development framework built on top of MonoGame. The main goal of this project is to provide developer friendly environment for fast prototyping cross-platform games, without writing platform specific code.</p>
-
+Bytech is an open source game development framework built on top of MonoGame. The main goal of this project is to provide developer friendly environment for fast prototyping cross-platform games, without writing platform specific code.
 ---
 ## Getting started
+
 
 
 
