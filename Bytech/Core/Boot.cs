@@ -4,29 +4,32 @@ using EcsRx.Infrastructure.Ninject;
 using EcsRx.MicroRx.Subjects;
 using EcsRx.Plugins.ReactiveSystems;
 using EcsRx.Plugins.ReactiveSystems.Extensions;
+using Microsoft.Xna.Framework;
 using System;
 using System.Reactive;
 using System.Reactive.Linq;
 
 namespace Bythope.Bytech.Core {
-    public class Runtime : EcsRxApplication, IDisposable {
+    public class Boot : EcsRxApplication, IDisposable {
 
         public override IDependencyContainer Container { get; } = new NinjectDependencyContainer();
         public IObservable<Unit> OnRun => _onRun;
         public IObservable<Unit> OnExit => _onExit;
-        private readonly IGameContext _gameContext;
+        public IBytech Bytech { get; private set; }
+        public GameContext GameContext { get; private set; }
         private readonly Subject<Unit> _onRun, _onExit;
 
-        public Runtime() {
+        public Boot() {
             _onRun = new Subject<Unit>();
             _onExit = new Subject<Unit>();
-            _gameContext = new GameContext();
+            GameContext = new GameContext();
+            Bytech = new Bytech(this);
         }
 
-        public void Setup() {
-            _gameContext.OnLoading.FirstAsync().Subscribe(x => StartApplication());
-            _gameContext.OnUnloading.FirstAsync().Subscribe(x => _onExit.OnNext(Unit.Default));
-            _gameContext.Run();
+        public void Run() {
+            GameContext.OnLoading.FirstAsync().Subscribe(x => StartApplication());
+            GameContext.OnUnloading.FirstAsync().Subscribe(x => _onExit.OnNext(Unit.Default));
+            GameContext.Run();
         }
 
         protected override void LoadPlugins() {
@@ -36,7 +39,7 @@ namespace Bythope.Bytech.Core {
 
         protected override void LoadModules() {
             base.LoadModules();
-            Container.LoadModule(new BytechModule(_gameContext));
+            Container.LoadModule(new BytechModule(this));
             // LOAD MODULES
         }
 
@@ -45,11 +48,12 @@ namespace Bythope.Bytech.Core {
         }
 
         protected override void ApplicationStarted() {
+            ((Bytech)Bytech).Setup();
             _onRun.OnNext(Unit.Default);
         }
 
         public void Dispose() {
-            _gameContext.Dispose();
+            GameContext.Dispose();
         }
     }
 }

@@ -1,25 +1,28 @@
 ﻿using Bythope.Bytech.Core;
 using System;
 using System.Reactive.Linq;
-using EcsRx.Infrastructure.Exceptions;
+using EcsRx.Infrastructure.Extensions;
 
 namespace Bythope.Bytech {
 
     public abstract class BytechApplication : IDisposable {
         
-        private Runtime Runtime { get; }
+        private Boot Boot { get; }
 
         public BytechApplication() {
-            Runtime = new Runtime();
-            // Runtime.OnRun.FirstAsync().Subscribe(x => OnRun());
-            Runtime.OnExit.FirstAsync().Subscribe(x => OnExit());
-            Runtime.Setup();
+            Boot = new Boot();
+            Boot.OnRun.FirstAsync().Subscribe(x => {
+                var sceneManager = Boot.Container.Resolve<ISceneManager>();
+                OnRun(Boot.Bytech, sceneManager);
+            });
+            Boot.OnExit.FirstAsync().Subscribe(x => OnExit());
+            Boot.Run();
         }
 
-        protected abstract void OnRun(IBytech bytech);
+        protected abstract void OnRun(IBytech bytech, ISceneManager sceneManager);
 
         protected abstract void OnExit();
         
-        public void Dispose() => Runtime.Dispose();
+        public void Dispose() => Boot.Dispose();
     }
 }

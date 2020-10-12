@@ -2,36 +2,27 @@
 using EcsRx.Scheduling;
 using Microsoft.Xna.Framework;
 using System;
-using System.Collections.Generic;
 using System.Reactive;
 using System.Reactive.Linq;
-using System.Text;
 
 namespace Bythope.Bytech.Core {
-    public class GameContext : Game, IGameContext {
+    public class GameContext : Game, IGameScheduler {
 
         public IObservable<Unit> OnLoading => _onLoading;
-
-        public IObservable<Unit> OnUnloading { get; }
-
+        public IObservable<Unit> OnUnloading { get;  }
         public IObservable<ElapsedTime> OnPreRender => _onPreRender;
-
         public IObservable<ElapsedTime> OnRender => _onRender;
-
         public IObservable<ElapsedTime> OnPostRender => _onPostRender;
-
         public IObservable<ElapsedTime> OnPreUpdate => _onPreUpdate;
-
         public IObservable<ElapsedTime> OnUpdate => _onUpdate;
-
         public IObservable<ElapsedTime> OnPostUpdate => _onPostUpdate;
-
+        public IObservable<Unit> OnFocus => _onActivated;
+        public IObservable<Unit> OnUnfocus => _onDeactivated;
         public ElapsedTime ElapsedTime { get; private set; }
 
-        public IBytech Bytech { get; }
 
         private readonly Subject<ElapsedTime> _onPreRender, _onRender, _onPostRender, _onPreUpdate, _onUpdate, _onPostUpdate;
-        private readonly Subject<Unit> _onLoading;
+        private readonly Subject<Unit> _onLoading, _onActivated, _onDeactivated;
 
         public GameContext() {
             _onPreRender = new Subject<ElapsedTime>();
@@ -41,9 +32,9 @@ namespace Bythope.Bytech.Core {
             _onUpdate = new Subject<ElapsedTime>();
             _onPostUpdate = new Subject<ElapsedTime>();
             _onLoading = new Subject<Unit>();
+            _onActivated = new Subject<Unit>();
+            _onDeactivated = new Subject<Unit>();
             OnUnloading = Observable.FromEventPattern<EventArgs>(x => Exiting += x, x => Exiting -= x).FirstAsync().Select(x => Unit.Default);
-
-            Bytech = new Bytech(this);
             // LOAD STANDARD THINGS FOR MONOGAME
         }
 
@@ -60,6 +51,16 @@ namespace Bythope.Bytech.Core {
             _onPreRender.OnNext(ElapsedTime);
             _onRender.OnNext(ElapsedTime);
             _onPostRender.OnNext(ElapsedTime);
+        }
+
+        protected override void OnActivated(object sender, EventArgs args) {
+            base.OnActivated(sender, args);
+            _onActivated.OnNext(Unit.Default);
+        }
+
+        protected override void OnDeactivated(object sender, EventArgs args) {
+            base.OnDeactivated(sender, args);
+            _onDeactivated.OnNext(Unit.Default);
         }
 
         protected override void Update(GameTime gameTime) {
