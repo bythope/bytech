@@ -17,5 +17,5 @@ dotnet add package Bytech
 ```
 3. Extend from BytechApplication class and start hacking!
 
-### Alernative
+### Alternative
 Clone [Bytech repository](https://github.com/bythope/bytech) and check the Demo application with a lot of examples of what you can do with Bytech. (IN DEVELOPMENT)
