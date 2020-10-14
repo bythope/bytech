@@ -34,14 +34,14 @@ jobs:
     name: notify
     runs-on: ubuntu-latest
     steps:
-      - name: Run Discord Webhook
+      - name: Discord Notification
         id: "send-to-discord-main"
         uses: "hugoalh/GitHubAction.SendToDiscord@v2.0.0"
         with:
           webhook_id: "${{secrets.BYTECH_DISCORD_WEBHOOK_ID}}"
           webhook_token: "${{secrets.BYTECH_DISCORD_WEBHOOK_TOKEN}}"
           message_usetexttospeech: "false"
-          message_embed_colour: "#4dd0e1"
+          message_embed_colour: "0,188,212"
           message_embed_title: "Demo Title"
           message_embed_titleurl: "https://bythope.github.io/bytech/#/changelog"
           message_embed_description: "YEaaahhh"
