@@ -34,7 +34,7 @@ jobs:
     name: notify
     env:
       DISCORD_WEBHOOK: ${{ secrets.BYTECH_DISCORD_WEBHOOK }}
-      VERSION: ${{ ${GITHUB_REF##*/} }}
+      VERSION: ${{ GITHUB_REF }}
     runs-on: ubuntu-latest
     steps:
       - name: send discord message
