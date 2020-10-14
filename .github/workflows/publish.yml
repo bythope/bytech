@@ -35,8 +35,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run Discord Webhook
-        uses: Slimefun/discord-webhook@master
+        id: "send-to-discord-main"
+        uses: "hugoalh/GitHubAction.SendToDiscord@v2.0.0"
         with:
-          id: ${{ secrets.BYTECH_DISCORD_WEBHOOK_ID }}
-          token: ${{ secrets.BYTECH_DISCORD_WEBHOOK_TOKEN }}
-    
+          webhook_id: "${{secrets.BYTECH_DISCORD_WEBHOOK_ID}}"
+          webhook_token: "${{secrets.BYTECH_DISCORD_WEBHOOK_TOKEN}}"
+          message_usetexttospeech: "false"
+          message_embed_colour: "#4dd0e1"
+          message_embed_title: "Demo Title"
+          message_embed_titleurl: "https://bythope.github.io/bytech/#/changelog"
+          message_embed_description: "YEaaahhh"
+          message_embed_field_0_key: "TEST1"
+          message_embed_field_0_value: "TEST2"
+          message_embed_footertext: "footer text"
+          variable_prefix: "%"
+          variable_suffix: "%"
+          variable_join: "."
