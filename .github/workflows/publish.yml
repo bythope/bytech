@@ -40,5 +40,5 @@ jobs:
       - name: send discord message
         uses: Ilshidur/action-discord@0.0.2
         with:
-          args: 'Check out my new updates, version: $VERSION.\nMore info: https://bythope.github.io/bytech/#/changelog'
+          args: 'Check out my new updates, version: {{ VERSION }}.\nMore info: https://bythope.github.io/bytech/#/changelog'
     
