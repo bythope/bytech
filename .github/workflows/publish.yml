@@ -1,15 +1,17 @@
-name: NuGet Publish
+name: Publish
 on:
   push:
-    branches:
-      - master
+    tags: 
+      - v*
+  
 jobs:
   publish:
     name: build, pack & publish
     runs-on: ubuntu-latest
+    
     steps:
       - uses: actions/checkout@v2
-
+        
       - name: Setup dotnet
         uses: actions/setup-dotnet@v1
         with:
@@ -21,6 +23,19 @@ jobs:
         with:
           PROJECT_FILE_PATH: Bytech/Bythope.Bytech.csproj
           PACKAGE_NAME: Bytech
+          TAG_COMMIT: false
           VERSION_FILE_PATH: Bytech/Bythope.Bytech.csproj
           VERSION_REGEX: ^\s*<Version>(.*)<\/Version>\s*$
-          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+          NUGET_KEY: ${{secrets.NUGET_API_KEY }}
+          
+  notify:
+    name: notify
+    env:
+      DISCORD_WEBHOOK: ${{ secrets.BYTECH_DISCORD_WEBHOOK }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: send discord message
+        uses: Ilshidur/action-discord@0.0.2
+        with:
+          args: 'Check out my new updates, version: {{ GITHUB_REF }}. More info: https://bythope.github.io/bytech/#/changelog'
+    
