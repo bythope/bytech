@@ -2,7 +2,7 @@
 
 :+1::tada: First off, thanks for taking the time to contribute! :tada::+1:
 
-The following is a set of guidelines for contributing to GdxMachine. No rules. Use your best judgment, and feel free to propose changes in form of pull requests.
+The following is a set of guidelines for contributing to Bytech. No rules. Use your best judgment, and feel free to propose changes in form of pull requests.
 
 ### Skill requirements
 Dear contributor, you don't need to be proficient in C# to be a contributor in this project. Feel free to explore the current "Good first issues".
