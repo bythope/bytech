@@ -1,8 +1,8 @@
 # Bytech
 [![GitHub](https://img.shields.io/github/license/bythope/bytech?style=for-the-badge)](https://github.com/bythope/bytech/blob/master/LICENSE)
-[![GitHub issues](https://img.shields.io/github/issues-raw/bythope/bytech?style=for-the-badge)](https://github.com/bythope/bytech/issues)
 [![Nuget](https://img.shields.io/nuget/v/Bytech?style=for-the-badge)](https://www.nuget.org/packages/Bytech/)
 [![Nuget](https://img.shields.io/nuget/dt/Bytech?style=for-the-badge)](https://www.nuget.org/packages/Bytech/)
+[![Discord](https://img.shields.io/discord/669238716782346252?style=for-the-badge)](https://discord.gg/nRmqzq5)
 [![forthebadge](https://img.shields.io/badge/-DOCUMENTATION-green?style=for-the-badge)](https://bythope.github.io/bytech)
 
 [![forthebadge](https://forthebadge.com/images/badges/gluten-free.svg)](#)
