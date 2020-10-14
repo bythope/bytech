@@ -1,0 +1,13 @@
+name: Discord Commits
+on: [push]
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v1
+    - name: Run Discord Webhook
+      uses: Mist3r-Robot/discord-webhook@master
+      with:
+        id: ${{ secrets.BYTECH_DISCORD_WEBHOOK_ID }}
+        token: ${{ secrets.BYTECH_DISCORD_WEBHOOK_TOKEN }}
