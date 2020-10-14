@@ -34,6 +34,9 @@ jobs:
     name: notify
     runs-on: ubuntu-latest
     steps:
+      - uses: olegtarasov/get-tag@v2
+        id: tagName
+        
       - name: Discord Notification
         id: "send-to-discord-main"
         uses: "hugoalh/GitHubAction.SendToDiscord@v2.0.0"
@@ -42,12 +45,10 @@ jobs:
           webhook_token: "${{secrets.BYTECH_DISCORD_WEBHOOK_TOKEN}}"
           message_usetexttospeech: "false"
           message_embed_colour: "0,188,212"
-          message_embed_title: "Demo Title"
+          message_embed_title: "New version released!"
           message_embed_titleurl: "https://bythope.github.io/bytech/#/changelog"
-          message_embed_description: "YEaaahhh"
-          message_embed_field_0_key: "TEST1"
-          message_embed_field_0_value: "TEST2"
-          message_embed_footertext: "footer text"
+          message_embed_description: "I'm happy to announce my new version. If you click on this link, you will be able to check my improvements"
+          message_embed_footertext: ${{ steps.tagName.outputs.tag }}
           variable_prefix: "%"
           variable_suffix: "%"
           variable_join: "."
