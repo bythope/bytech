@@ -43,7 +43,7 @@ jobs:
           webhook_token: "${{secrets.BYTECH_DISCORD_WEBHOOK_TOKEN}}"
           message_usetexttospeech: "false"
           message_embed_colour: "0,188,212"
-          message_embed_title: "[${{ steps.tagName.outputs.tag }}] version is released!"
+          message_embed_title: "${{ steps.tagName.outputs.tag }} version is released!"
           message_embed_titleurl: "https://bythope.github.io/bytech/#/changelog"
           message_embed_description: "I'm happy to announce my new version. Check the updates"
           message_embed_footertext: ${{ steps.tagName.outputs.tag }}
